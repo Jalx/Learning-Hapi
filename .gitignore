@@ -1,0 +1,15 @@
+#################
+## Files
+#################
+
+##package.json
+.babelrc
+js=babel-loader
+
+#################
+## Directories
+#################
+
+node_modules/
+src/client/bin
+.vscode
