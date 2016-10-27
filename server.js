@@ -2,17 +2,17 @@
 
 const Path = require('path');
 const Hapi = require('hapi');
-const Inert = require('Inert');
+const Inert = require('inert');
 
 // Create a server with a host and port
 const server = new Hapi.Server();
-server.connection({ 
-    host: 'localhost', 
-    port: 8000 
+server.connection({
+    host: 'localhost',
+    port: 8000
 });
 
-//serving index
-server.register(Inert, () => {});
+//serving client directory
+server.register(Inert, () => { });
 server.route({
     method: 'GET',
     path: '/{param*}',
@@ -27,9 +27,8 @@ server.route({
 
 server.route({
     method: 'GET',
-    path:'/hello', 
+    path: '/hello',
     handler: function (request, reply) {
-
         return reply('hello world');
     }
 });
